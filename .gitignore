@@ -1,3 +1,10 @@
+*.jpg
+*.jpeg
+*.wepb
+*.npz
+*.ckpt
+*.gif
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
