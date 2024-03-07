@@ -17,7 +17,29 @@
       pip install pillow==7.0.0 scipy==1.2.1 tqdm==4.43.0 munch==2.5.0
    ```
 
-   
+2. downloads ckpt
+   ```
+      bash download.sh celeba-hq-dataset
+      bash download.sh pretrained-network-celeba-hq
+      bash download.sh wing
+   ```
+3. image align
+   1) put image to custom male / female folder
+   2) Please modify the code below to match gender
+      ```
+         python main.py --mode align \
+               --inp_dir assets/representative/custom/female \
+               --out_dir assets/representative/celeba_hq/src/female
+      ```
+   3) run
+      ```
+         python main.py --mode sample --num_domains 2 --resume_iter 100000 --w_hpf 1 \
+               --checkpoint_dir expr/checkpoints/celeba_hq \
+               --result_dir expr/results/celeba_hq \
+               --src_dir assets/representative/celeba_hq/src \
+               --ref_dir assets/representative/celeba_hq/ref
+      ```
+      
 
 ### sample result
 ![reference](https://github.com/Bong-HoonLee/change_your_look/assets/115579916/c5bd232c-cdf2-4b81-b49b-21bee70d9810)
